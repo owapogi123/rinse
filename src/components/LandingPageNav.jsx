@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 export default function LandingPageNav() {
   return (
     <>
-      <div className="sticky top-0 z-50 flex justify-start items-center bg-[#98d8ef] p-[1rem] shadow-2xl">
+      <div className="w-full sticky top-0 z-50 flex justify-start items-center bg-[lightblue] p-[1rem] shadow-2xl">
         <div className="flex justify-center items-center gap-[0.5rem] mr-auto">
           <img src="/icon.svg" className="w-[2.5rem] h-[2.5rem] invert" />
           <div className="text-[2rem] text-[black] font-bold">RINSE</div>
