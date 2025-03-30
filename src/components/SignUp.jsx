@@ -51,6 +51,7 @@ function SignUp() {
   useEffect(() => {
     if (signupMutation.isSuccess) {
       console.log("signup response: ", signupMutation.data);
+	    if(signupMutation.data.message === 'Name is already taken') alert('name already taken!')
       if (signupMutation.data.signupStatus) {
         alert("Account successfully created!");
         navigate("/sign");
