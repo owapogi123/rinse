@@ -1,38 +1,68 @@
-import { NavLink } from "react-router";
+import { useMutation } from "@tanstack/react-query";
+import { NavLink, useNavigate } from "react-router";
 import { useForm } from "@tanstack/react-form";
+import { useEffect } from "react";
 
 function SignIn() {
-  const form = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-    onSubmit: ({ value }) => {
-      if (!value.email) return alert("Email is required!");
-      if (!value.password) return alert("Password is required!");
-
-      console.log("Form Submitted: ", value);
+  const navigate = useNavigate();
+  const signinMutation = useMutation({
+    mutationKey: ["signinMutation"],
+    mutationFn: async (data) => {
+      return await fetch("http://localhost:3000/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        return res.json();
+      });
     },
   });
+
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      password: "",
+    },
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!form.state.values.name) return alert("Name is required!");
+    if (!form.state.values.password) return alert("Password is required!");
+
+    signinMutation.mutate({
+      name: form.state.values.name,
+      password: form.state.values.password,
+    });
+    return;
+  }
+
+  useEffect(() => {
+    if (signinMutation.isSuccess) {
+      console.log(signinMutation.data);
+      if (signinMutation.data.message == "user not found")
+        alert("incorrect credentials");
+      if (signinMutation.data.signinStatus) {
+        navigate("/home");
+      }
+    }
+  }, [signinMutation.isSuccess]);
 
   return (
     <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xl p-[5rem] text-white rounded-[3rem] flex flex-col items-center gap-[2rem]">
       <div className="text-[3rem] text-[white] font-bold">SIGN IN</div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          form.handleSubmit();
-        }}
-        className="flex flex-col gap-[1rem]"
-      >
-        <form.Field name="email">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-[1rem]">
+        <form.Field name="name">
           {(field) => (
             <input
               type="text"
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
-              placeholder="Email"
+              placeholder="Name"
               className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
             />
           )}
