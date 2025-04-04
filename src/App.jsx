@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import LandingPageLayout from "./layouts/LandingPageLayout";
 import SignInAndSignUpLayout from "./layouts/SignInAndSignUpLayout";
 import SignIn from "./components/SignIn";

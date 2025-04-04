@@ -23,10 +23,10 @@ function SignUp() {
 
   const form = useForm({
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      Name: "",
+      Email: "",
+      Password: "",
+      ConfirmPassword: "",
     },
   });
 
@@ -72,7 +72,7 @@ function SignUp() {
                   type="text"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="name"
+                  placeholder="Name"
                   className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
                 />
               </div>
@@ -86,7 +86,7 @@ function SignUp() {
                   type="text"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="email"
+                  placeholder="Email"
                   className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
                 />
               </div>
@@ -97,7 +97,7 @@ function SignUp() {
             {(field) => (
               <div>
                 <input
-                  type="password"
+                  type="Password"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="password"
@@ -111,7 +111,7 @@ function SignUp() {
             {(field) => (
               <div>
                 <input
-                  type="password"
+                  type="Password"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Confirm Password"
