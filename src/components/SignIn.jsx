@@ -88,7 +88,7 @@ function SignIn() {
             Sign In
           </button>
           <NavLink to="/sign/up" end>
-            <div className="font-mono text-[0.9rem]">
+            <div className="font-Poppins text-[0.9rem]">
               Don't have an account?
             </div>
           </NavLink>

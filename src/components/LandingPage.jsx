@@ -20,7 +20,7 @@ function LandingPage() {
 
         <div className="col-span-2 flex items-center justify-center">
           <img
-            className="w-full p-4 max-w-[500px] rounded-full shadow-xl "
+            className="w-full p-4 max-w-[500px] rounded-full shadow-xl -skew-y-6  size-150 transform-3d -translate-8 "
             src="/src/assets/landing-page-img7.jpg"
             alt=""
           />
