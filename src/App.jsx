@@ -5,6 +5,8 @@ import SignInAndSignUpLayout from "./layouts/SignInAndSignUpLayout";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+import Sidebar from './components/Sidebar';
+import LayoutWithSidebar from "./layouts/LayoutWithSidebar";
 function App() {
   const queryClient = new QueryClient();
   return (

@@ -61,8 +61,8 @@ function SignUp() {
   }, [signupMutation.isSuccess]);
 
   return (
-    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xl p-[5rem] text-white rounded-[3rem] flex flex-col items-center gap-[2rem]">
-      <div className="text-[3rem] text-[white] font-bold">SIGN UP</div>
+    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-large p-[9rem] text-white rounded-[3rem] flex flex-col items-center gap-[2rem]">
+      <div className="text-[3rem] text-[white] font-bold font-[Poppins]">SIGN UP</div>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-[1rem] ">
           <form.Field name="name">
@@ -73,7 +73,7 @@ function SignUp() {
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Name"
-                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
                 />
               </div>
             )}
@@ -83,11 +83,11 @@ function SignUp() {
             {(field) => (
               <div>
                 <input
-                  type="text"
+                  type="email"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Email"
-                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
                 />
               </div>
             )}
@@ -101,7 +101,7 @@ function SignUp() {
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="password"
-                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
                 />
               </div>
             )}
@@ -115,7 +115,7 @@ function SignUp() {
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Confirm Password"
-                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+                  className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
                 />
                 {/*conditional rendering pag hindi match ang password*/}
                 {field.state.value &&
@@ -129,12 +129,12 @@ function SignUp() {
           <div className="flex flex-col gap-[0.5rem] items-center w-full">
             <button
               type="submit"
-              className="w-full bg-[darkblue] text-[white] cursor-pointer p-[1rem] rounded-md"
+              className="w-full bg-[darkblue] text-[white] cursor-pointer p-[0.6rem] rounded-xl font-[Poppins]"
             >
               Sign Up
             </button>
             <NavLink to="/sign" end>
-              <div className="font-Poppins text-[0.9rem]">
+              <div className="text-[0.9rem] font-[Poppins] ">
                 Already have an account?
               </div>
             </NavLink>

@@ -2,6 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 import { NavLink, useNavigate } from "react-router";
 import { useForm } from "@tanstack/react-form";
 import { useEffect } from "react";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 function SignIn() {
   const navigate = useNavigate();
@@ -53,8 +55,8 @@ function SignIn() {
   }, [signinMutation.isSuccess]);
 
   return (
-    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xl p-[5rem] text-white rounded-[3rem] flex flex-col items-center gap-[2rem]">
-      <div className="text-[3rem] text-[white] font-bold">SIGN IN</div>
+    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-none p-[10rem] text-white rounded-[3rem] flex flex-col items-center gap-[5rem]">
+      <div className="text-[3rem] text-[white] font-bold font-[Poppins]">SIGN IN</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-[1rem]">
         <form.Field name="name">
           {(field) => (
@@ -63,7 +65,7 @@ function SignIn() {
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
               placeholder="Name"
-              className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+              className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
             />
           )}
         </form.Field>
@@ -75,7 +77,7 @@ function SignIn() {
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
               placeholder="Password"
-              className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-md"
+              className="p-2 bg-white text-black placeholder-black border-none outline-none rounded-xl font-[Poppins]"
             />
           )}
         </form.Field>
@@ -83,12 +85,12 @@ function SignIn() {
         <div className="flex flex-col gap-[0.5rem] items-center w-full">
           <button
             type="submit"
-            className="w-full bg-[darkblue] text-[white] cursor-pointer p-[1rem] rounded-md"
+            className="w-full bg-[darkblue] text-[white] cursor-pointer p-[1rem] rounded-xl font-[Poppins]"
           >
             Sign In
           </button>
           <NavLink to="/sign/up" end>
-            <div className="font-Poppins text-[0.9rem]">
+            <div className="text-[0.9rem] font-[Poppins]">
               Don't have an account?
             </div>
           </NavLink>
