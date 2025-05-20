@@ -61,7 +61,7 @@ function SignUp() {
   }, [signupMutation.isSuccess]);
 
   return (
-    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-large p-[9rem] text-white rounded-[3rem] flex flex-col items-center gap-[2rem]">
+    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xs p-[9rem] text-white rounded-[5rem] flex flex-col items-center gap-[2rem]">
       <div className="text-[3rem] text-[white] font-bold font-[Poppins]">SIGN UP</div>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-[1rem] ">

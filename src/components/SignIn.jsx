@@ -55,7 +55,7 @@ function SignIn() {
   }, [signinMutation.isSuccess]);
 
   return (
-    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-none p-[10rem] text-white rounded-[3rem] flex flex-col items-center gap-[5rem]">
+    <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xs p-[10rem] text-white rounded-[3rem] flex flex-col items-center gap-[5rem]">
       <div className="text-[3rem] text-[white] font-bold font-[Poppins]">SIGN IN</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-[1rem]">
         <form.Field name="name">

@@ -40,7 +40,7 @@ function SignInAndSignUpLayout() {
       <NavLink to="/">
         <div className="absolute top-[1%] left-[1%] text-[white]"> ← Back</div>
       </NavLink>
-      <div className="h-screen bg-[url('/src/assets/signup-bg.jpg')] bg-cover bg-center flex items-center justify-center">
+      <div className="h-screen bg-[url('/src/assets/sign.bg.jpg')] bg-cover bg-center flex items-center justify-center">
            <Outlet/>
       </div>
     </>
