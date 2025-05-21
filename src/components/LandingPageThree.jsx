@@ -5,12 +5,11 @@ export default function LandingPageThree() {
         <div className="row-span-2 col-span-2 flex flex-col">
           <div className="bg-blue-100 p-12 flex-1">
             <h1 className="text-6xl font-bold mb-6 text-gray-800">
-              EFFORTLESS LAUNDRY. EVERYDAY FRESHNESS.          
+              EFFORTLESS LAUNDRY. EVERYDAY FRESHNESS.
             </h1>
             <p className="text-xl text-[#1662c0] font-[Poppins] font-semibold">
-              We provide essential services that make everyday
-              life easier for you. We offer efficient cleaning,
-              drying, and folding of clothes.
+              We provide essential services that make everyday life easier for
+              you. We offer efficient cleaning, drying, and folding of clothes.
             </p>
           </div>
           <div className="bg-white p-8">

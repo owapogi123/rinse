@@ -10,6 +10,10 @@ import Services from "./components/Services";
 import Promos from "./components/Promos";
 import AdminLogin from "./components/AdminLogin";
 import RoleSelector from "./components/RoleSelector";
+import AdminHome from "./components/AdminHome";
+import CustomerProfile from "./components/CustomerProfile";
+import Machine from "./components/Machine";
+import ReserveQueue from "./components/ReserveQueue";
 
 function App() {
   const queryClient = new QueryClient();
@@ -18,10 +22,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-
           <Route path="/" element={<RoleSelector />} />
 
-    
           <Route path="/landing" element={<LandingPageLayout />} />
 
           <Route path="/services" element={<Services />} />
@@ -31,7 +33,11 @@ function App() {
             <Route path="up" element={<SignUp />} />
           </Route>
           <Route path="/home" element={<Home />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/profile" element={<CustomerProfile/>} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+	  <Route path="/admin/home" element={<AdminHome/>}/>
+	  <Route path="/admin/machine" element={<Machine/>}/>
+	  <Route path="/admin/reserve-queue" element={<ReserveQueue/>}/>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

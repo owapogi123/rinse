@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function LandingPageNav() {
-  const [role, setRole] = useState(null); 
+  const [role, setRole] = useState(null);
   const navigate = useNavigate();
 
   const menuItems = [
@@ -10,7 +10,7 @@ export default function LandingPageNav() {
     { name: "Promos", path: "/promos" },
     { name: "Contact us", path: "/contact" },
   ];
-  
+
   return (
     <nav className="w-full sticky top-0 z-50 flex justify-start items-center bg-[white] p-[1rem] shadow-4xl relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-between pointer-events-none">

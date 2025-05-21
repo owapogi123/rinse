@@ -10,11 +10,6 @@ export default function Sidebar() {
   const tabs = [
     { name: "Home", path: "/home" },
     { name: "Profile", path: "/profile" },
-    { name: "Notifications", path: "/notifications" },
-    { name: "Messages", path: "/messages" },
-    { name: "Wallets", path: "/wallets" },
-    { name: "Likes", path: "/likes" },
-    { name: "Settings", path: "/settings" },
   ];
 
   useEffect(() => {
@@ -151,113 +146,8 @@ export default function Sidebar() {
               ))}
             </nav>
 
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              animate={{
-                width: "100%",
-                opacity: 1,
-                transition: {
-                  delay: tabs.length * 0.05 + 0.2,
-                  duration: 0.8,
-                  type: "spring",
-                },
-              }}
-              className="h-px bg-gradient-to-r from-transparent via-blue-400/70 to-transparent my-6"
-            />
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: tabs.length * 0.05 + 0.5,
-                  type: "spring",
-                  stiffness: 100,
-                },
-              }}
-              whileHover={{
-                backgroundColor: "rgba(42, 64, 104, 0.2)",
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center gap-3 p-3 rounded-lg cursor-pointer mt-auto mb-4"
-            >
-              <motion.div
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md"
-                whileHover={{
-                  rotate: [0, 10, -10, 0],
-                  scale: [1, 1.1, 1],
-                  transition: { duration: 0.7 },
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <motion.span
-                  className="text-xl"
-                  animate={{
-                    rotate: [0, 10, -5, 0],
-                    transition: {
-                      delay: tabs.length * 0.05 + 0.8,
-                      duration: 0.8,
-                    },
-                  }}
-                >
-                  👋
-                </motion.span>
-              </motion.div>
-              <motion.div
-                initial={{ x: -10, opacity: 0 }}
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: tabs.length * 0.05 + 0.7,
-                    type: "spring",
-                  },
-                }}
-              >
-                <div className="font-xl font-semibold text-black">
-                  Guest User
-                </div>
-                <motion.div
-                  className="text-sm text-gray-700"
-                  whileHover={{ x: 3 }}
-                >
-                  View Profile
-                </motion.div>
-              </motion.div>
-            </motion.div>
 
-            <motion.div
-              className="absolute bottom-6 right-6 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: tabs.length * 0.05 + 1,
-                  type: "spring",
-                },
-              }}
-              whileHover={{
-                scale: 1.1,
-                boxShadow: "0 0 15px rgba(59, 130, 246, 0.7)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.span
-                animate={{
-                  scale: [1, 1.1, 1],
-                  transition: {
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: 2,
-                  },
-                }}
-              >
-                ➕
-              </motion.span>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
