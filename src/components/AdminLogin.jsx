@@ -1,24 +1,39 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 function AdminLogin() {
+const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      if (username === "admin" && password === "password123") {
-        alert("Logged in successfully!");
-      } else {
-        setError("Invalid username or password");
+
+    try {
+      const response = await fetch("http://localhost:3000/admin/sign-in", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Invalid username or password");
       }
-    }, 1000);
+
+      const data = await response.json();
+      navigate("/admin/home"); // Navigate instead of alert
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

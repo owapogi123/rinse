@@ -13,7 +13,6 @@ export default function RoleSelector() {
       </h1>
 
       <div className="flex flex-col sm:flex-row gap-10">
-    
         <div
           onClick={() => navigate("/admin/login")}
           className="cursor-pointer bg-white/10 border border-white/30 backdrop-blur-xl shadow-xl rounded-2xl p-8 flex flex-col items-center w-64 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fadeSlideIn delay-100"
@@ -28,7 +27,6 @@ export default function RoleSelector() {
           </button>
         </div>
 
-    
         <div
           onClick={() => navigate("/landing")}
           className="cursor-pointer bg-white/10 border border-white/30 backdrop-blur-xl shadow-xl rounded-2xl p-8 flex flex-col items-center w-64 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fadeSlideIn delay-300"
