@@ -2,8 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { NavLink, useNavigate } from "react-router";
 import { useForm } from "@tanstack/react-form";
 import { useEffect } from "react";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -56,7 +55,9 @@ function SignIn() {
 
   return (
     <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xs p-[10rem] text-white rounded-[3rem] flex flex-col items-center gap-[5rem]">
-      <div className="text-[3rem] text-[white] font-bold font-[Poppins]">SIGN IN</div>
+      <div className="text-[3rem] text-[white] font-bold font-[Poppins]">
+        SIGN IN
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-[1rem]">
         <form.Field name="name">
           {(field) => (

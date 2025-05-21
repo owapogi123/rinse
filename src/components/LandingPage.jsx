@@ -1,11 +1,11 @@
 function LandingPage() {
   return (
     <>
-      <div className="relative grid grid-cols-3 gap-3 p-[2rem] bg-[lightyellow] w-full h-screen rounded-3xl overflow-hidden">
+      <div className="relative grid grid-cols-3 gap-3 p-[2rem] bg-[white] w-full h-screen rounded-3xl overflow-hidden">
         <div className="absolute top-0 left-1/4 h-full w-0.5 bg-gradient-to-b from-transparent via-black to-transparent opacity-30"></div>
         <div className="absolute top-0 left-1/2 h-full w-0.5 bg-gradient-to-b from-transparent via-black to-transparent opacity-30"></div>
         <div className="absolute top-0 left-3/4 h-full w-0.5 bg-gradient-to-b from-transparent via-black to-transparent opacity-30"></div>
-        
+
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           <div className="absolute top-0 left-0 w-[150%] h-0.5 bg-black opacity-20 transform rotate-12 origin-left"></div>
           <div className="absolute top-1/3 left-0 w-[150%] h-0.5 bg-black opacity-20 transform rotate-6 origin-left"></div>
@@ -19,8 +19,8 @@ function LandingPage() {
             <div className="text-[2rem] text-pretty">
               <div>
                 <span className="font-ms font-[Poppins]">
-                  partners with professional cleaning facilities to ensure
-                  high quality laundry and dry cleaning services
+                  partners with professional cleaning facilities to ensure high
+                  quality laundry and dry cleaning services
                 </span>
               </div>
             </div>

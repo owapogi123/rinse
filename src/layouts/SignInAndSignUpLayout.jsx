@@ -4,8 +4,8 @@
 //   return (
 //     <div className="relative h-screen">
 //       {/* Clickable Back Button */}
-//       <NavLink 
-//         to="/" 
+//       <NavLink
+//         to="/"
 //         className="absolute top-[1%] left-[1%] z-10 text-white hover:text-indigo-200 transition-colors"
 //       >
 //         ← Back
@@ -20,7 +20,7 @@
 //             WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 90%)'
 //           }}
 //         />
-        
+
 //         {/* Content area - fixed the Outlet component name (capital O) */}
 //         <div className="relative z-10 h-full flex items-center justify-center">
 //           <Outlet />
@@ -32,7 +32,6 @@
 
 // export default SignInAndSignUpLayout;
 
-
 import { Outlet, NavLink } from "react-router";
 function SignInAndSignUpLayout() {
   return (
@@ -41,7 +40,7 @@ function SignInAndSignUpLayout() {
         <div className="absolute top-[1%] left-[1%] text-[white]"> ← Back</div>
       </NavLink>
       <div className="h-screen bg-[url('/src/assets/sign.bg.jpg')] bg-cover bg-center flex items-center justify-center">
-           <Outlet/>
+        <Outlet />
       </div>
     </>
   );

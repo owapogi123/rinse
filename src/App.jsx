@@ -8,9 +8,8 @@ import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import Sidebar from "./components/Sidebar";
 import LayoutWithSidebar from "./layouts/LayoutWithSidebar";
-import Services from "./components/Services"; 
+import Services from "./components/Services";
 import Promos from "./components/Promos";
-
 
 function App() {
   const queryClient = new QueryClient();
@@ -20,10 +19,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPageLayout />} />
-          <Route path="/services" element={<Services />} /> 
-          <Route path="/promos" element={<Promos />} /> 
+          <Route path="/services" element={<Services />} />
+          <Route path="/promos" element={<Promos />} />
           <Route path="/sign" element={<SignInAndSignUpLayout />}>
             <Route index element={<SignIn />} />
+            
             <Route path="up" element={<SignUp />} />
           </Route>
           <Route path="/home" element={<Home />} />
