@@ -10,10 +10,12 @@ import Services from "./components/Services";
 import Promos from "./components/Promos";
 import AdminLogin from "./components/AdminLogin";
 import RoleSelector from "./components/RoleSelector";
-import AdminHome from "./components/AdminHome";
+import AdminHome from "./components/admin/AdminHome";
 import CustomerProfile from "./components/CustomerProfile";
-import Machine from "./components/Machine";
-import ReserveQueue from "./components/ReserveQueue";
+import Machine from "./components/admin/Machine";
+import ReserveQueue from "./components/admin/ReserveQueue";
+import Reservation from "./components/Reservation";
+import ReservationStatus from "./components/ReservationStatus";
 
 function App() {
   const queryClient = new QueryClient();
@@ -33,11 +35,13 @@ function App() {
             <Route path="up" element={<SignUp />} />
           </Route>
           <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<CustomerProfile/>} />
+          <Route path="/profile" element={<CustomerProfile />} />
           <Route path="/admin/login" element={<AdminLogin />} />
-	  <Route path="/admin/home" element={<AdminHome/>}/>
-	  <Route path="/admin/machine" element={<Machine/>}/>
-	  <Route path="/admin/reserve-queue" element={<ReserveQueue/>}/>
+          <Route path="/admin/home" element={<AdminHome />} />
+          <Route path="/admin/machine" element={<Machine />} />
+          <Route path="/admin/reserve-queue" element={<ReserveQueue />} />
+          <Route path="/reserve" element={<Reservation />} />
+          <Route path="/my-reservations" element={<ReservationStatus/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

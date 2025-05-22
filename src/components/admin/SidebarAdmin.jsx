@@ -15,7 +15,10 @@ export default function SidebarAdmin() {
         <Link to="/admin/machine" className="hover:bg-gray-700 p-2 rounded">
           🛠️ Machine
         </Link>
-        <Link to="/admin/reserve-queue" className="hover:bg-gray-700 p-2 rounded">
+        <Link
+          to="/admin/reserve-queue"
+          className="hover:bg-gray-700 p-2 rounded"
+        >
           📋 Reserve Queue
         </Link>
       </nav>

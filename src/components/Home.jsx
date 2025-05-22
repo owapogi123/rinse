@@ -22,9 +22,8 @@ export default function Home() {
     navigate("/");
   };
 
-
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user.name, user.email);
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user.name, user.email);
   return (
     <>
       <Sidebar />
@@ -54,7 +53,7 @@ console.log(user.name, user.email);
         </button>
 
         <div className="relative z-10">
-          <h1 className="text-[2.5rem] font-bold text-gray-800 text-center my-15 font-[Poppins] uppercase">
+          <h1 className="text-[2.5rem] font-bold text-white text-center my-15 font-[Poppins] uppercase">
             OUR PRICES
           </h1>
           <div className="flex justify-evenly items-center gap-[2.5rem] flex-wrap">
