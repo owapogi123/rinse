@@ -10,6 +10,8 @@ export default function Sidebar() {
   const tabs = [
     { name: "Home", path: "/home" },
     { name: "Profile", path: "/profile" },
+    { name: "Make Reservation", path: "/reserve" },
+    { name: "My Reservations", path: "/my-reservations" },
   ];
 
   useEffect(() => {
@@ -127,27 +129,10 @@ export default function Sidebar() {
                     >
                       {tab.name}
                     </motion.span>
-                    {index === 2 && (
-                      <motion.span
-                        className="ml-auto bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{
-                          delay: index * 0.05 + 0.3,
-                          type: "spring",
-                        }}
-                        whileHover={{ scale: 1.2 }}
-                      >
-                        3
-                      </motion.span>
-                    )}
                   </NavLink>
                 </motion.div>
               ))}
             </nav>
-
-
-
           </motion.div>
         )}
       </AnimatePresence>

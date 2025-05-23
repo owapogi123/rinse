@@ -42,33 +42,31 @@ function SignIn() {
     return;
   }
 
-useEffect(() => {
-  if (signinMutation.isSuccess) {
-    console.log('response: ', signinMutation.data);
+  useEffect(() => {
+    if (signinMutation.isSuccess) {
+      console.log("response: ", signinMutation.data);
 
-    if (signinMutation.data.message === "user not found") {
-      alert("incorrect credentials");
-      return;
+      if (signinMutation.data.message === "user not found") {
+        alert("incorrect credentials");
+        return;
+      }
+
+      if (signinMutation.data.signinStatus) {
+        const userData = {
+          id: signinMutation.data.id, // ✅ Must be here
+          name: signinMutation.data.name,
+          email: signinMutation.data.email,
+          homeAddress: signinMutation.data.homeAddress || "",
+          phoneNumber: signinMutation.data.phoneNumber || "",
+        };
+
+        localStorage.setItem("user", JSON.stringify(userData));
+        navigate("/home");
+      }
     }
-
-    if (signinMutation.data.signinStatus) {
-      const userData = {
-        id: signinMutation.data.id, // ✅ Must be here
-        name: signinMutation.data.name,
-        email: signinMutation.data.email,
-        homeAddress: signinMutation.data.homeAddress || "",
-        phoneNumber: signinMutation.data.phoneNumber || "",
-      };
-
-      localStorage.setItem("user", JSON.stringify(userData));
-      navigate("/home");
-    }
-  }
-}, [signinMutation.isSuccess]);
-
+  }, [signinMutation.isSuccess]);
 
   return (
-
     <div className="bg-[rgba(0,0,0,0.2)] backdrop-blur-xs p-[10rem] text-white rounded-[3rem] flex flex-col items-center gap-[5rem]">
       <div className="text-[3rem] text-[white] font-bold font-[Poppins]">
         SIGN IN

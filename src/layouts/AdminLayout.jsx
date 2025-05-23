@@ -1,8 +1,8 @@
-import { Outlet } from "react-router"
-export default function AdminLayout(){
-return(
-	<>
-	<Outlet/>
-	</>
-)
+import { Outlet } from "react-router";
+export default function AdminLayout() {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }

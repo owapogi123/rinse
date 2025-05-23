@@ -33,31 +33,21 @@ export default function CustomerProfile() {
     setError(null);
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/signup/${user.id}`, // your backend URL
-        {
-  	method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: user.name,
-            email: user.email,
-            homeAddress: user.homeAddress,
-            phoneNumber: user.phoneNumber,
-          }),
-        }
-      );
+      const response = await fetch(`http://localhost:3000/signup/${user.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: user.name,
+          email: user.email,
+          homeAddress: user.homeAddress,
+          phoneNumber: user.phoneNumber,
+        }),
+      });
 
-      if (!response.ok) {
-        throw new Error("Failed to update user");
-      }
+      if (!response.ok) throw new Error("Failed to update user");
 
       const updatedUser = await response.json();
-
-      // Update localStorage with new user info
       localStorage.setItem("user", JSON.stringify(updatedUser));
-
       alert("Profile updated successfully");
       setUser(updatedUser);
     } catch (err) {
@@ -68,65 +58,83 @@ export default function CustomerProfile() {
   };
 
   return (
-    <>
+    <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
 
-      <h1>Customer Profile</h1>
+      <main className="flex-1 p-6">
+        <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-6">
+          <button
+            onClick={() => navigate("/home")}
+            className="cursor-pointer text-blue-600 hover:underline text-sm"
+          >
+            ← Back
+          </button>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-semibold text-gray-800 text-center flex-1 -ml-8">
+              Customer Profile
+            </h2>
+          </div>
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-6 p-4 bg-white rounded shadow">
-        <label className="block mb-2">
-          Name:
-          <input
-            name="name"
-            value={user.name}
-            onChange={handleChange}
-            required
-            className="w-full border p-2 rounded"
-          />
-        </label>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-gray-700 mb-1">Name</label>
+              <input
+                name="name"
+                value={user.name}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-        <label className="block mb-2">
-          Email:
-          <input
-            name="email"
-            type="email"
-            value={user.email}
-            onChange={handleChange}
-            required
-            className="w-full border p-2 rounded"
-          />
-        </label>
+            <div>
+              <label className="block text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-        <label className="block mb-2">
-          Home Address:
-          <input
-            name="homeAddress"
-            value={user.homeAddress || ""}
-            onChange={handleChange}
-            className="w-full border p-2 rounded"
-          />
-        </label>
+            <div>
+              <label className="block text-gray-700 mb-1">Home Address</label>
+              <input
+                name="homeAddress"
+                value={user.homeAddress}
+                onChange={handleChange}
+                className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-        <label className="block mb-2">
-          Phone Number:
-          <input
-            name="phoneNumber"
-            value={user.phoneNumber || ""}
-            onChange={handleChange}
-            className="w-full border p-2 rounded"
-          />
-        </label>
+            <div>
+              <label className="block text-gray-700 mb-1">Phone Number</label>
+              <input
+                name="phoneNumber"
+                value={user.phoneNumber}
+                onChange={handleChange}
+                className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-        {error && <p className="text-red-600">{error}</p>}
+            {error && <p className="text-red-500 text-sm">{error}</p>}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-        >
-          {loading ? "Updating..." : "Update Profile"}
-        </button>
-      </form>
-    </>
+            <div className="text-center">
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition ${
+                  loading && "opacity-50 cursor-not-allowed"
+                }`}
+              >
+                {loading ? "Updating..." : "Update Profile"}
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
   );
 }
